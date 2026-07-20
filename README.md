@@ -2,34 +2,34 @@
 
 ## Status
 
-This repository is currently **empty**. It is a freshly initialized Git repository with no commits and no tracked files.
+This repository currently contains **no project source code** — only this README. The working tree holds a single commit and no application files (no `package.json`, `pyproject.toml`, source directories, etc.), so there is nothing yet to describe in terms of features, tech stack, or usage.
 
 ```
-$ git log --all --oneline
-(no output — zero commits)
+$ git log --oneline
+fe96718 docs: refresh README (automated audit)
 
-$ git rev-list --all
-(no output — zero objects)
+$ find . -not -path './.git*'
+./README.md
 ```
 
 ## Repository configuration
 
-The local Git configuration declares an `origin` remote and a tracking branch, but the corresponding content has not yet been fetched or checked out into this working directory:
+The local Git configuration is set up to track a fork, but only the branch below has been fetched into this working copy:
 
 | Setting | Value |
 | --- | --- |
 | Remote (`origin`) | `https://github.com/rustyorb/spdustin-ChatGPT-AutoExpert.git` |
-| Local branch | `main` (tracks `origin/main`) |
+| Checked-out branch | `chore/readme-audit` (tracks `origin/chore/readme-audit`) |
 
-Based on the remote URL, this repository is set up as a fork of [`spdustin/ChatGPT-AutoExpert`](https://github.com/spdustin/ChatGPT-AutoExpert), a project of custom instructions/prompts for use with ChatGPT. That upstream content is **not present in this working directory**, so no features, install steps, or usage instructions can be documented here yet.
+Based on the remote name, this repository is a fork of [`spdustin/ChatGPT-AutoExpert`](https://github.com/spdustin/ChatGPT-AutoExpert). The upstream project's source has not been fetched into this working directory, so no install steps, commands, or usage instructions can be documented here yet.
 
 ## Next steps
 
-To populate this repository with the intended project content, fetch and check out the upstream branch:
+To bring in the upstream project content:
 
 ```bash
 git fetch origin
-git checkout -b main --track origin/main
+git checkout main   # or whichever branch holds the upstream source
 ```
 
-Once real source files exist, this README should be regenerated to describe the actual features, tech stack, installation, and usage of the project.
+Once real source files are present, this README should be regenerated to describe the project's actual features, tech stack, installation, and usage.
